@@ -1,26 +1,68 @@
 # RemwasteTask
 Objective:
+To implement automated tests for a small web application consisting of a React frontend and a Node.js backend API.
 
-Design and implement automated tests for a small web application consisting of a React frontend and a Node.js backend API.
 
-Find or Create very simple react and node js apps that have some functionality that you want to test in order to show your skills. Be creative.
+Test Plan / Test Strategy for ParaBank Playwright Automation
+============================================================
 
-Then Implement:
+1. Introduction
+----------------
+This document outlines the test plan and strategy for automated testing of the ParaBank web application and its REST API using Playwright. The goal is to ensure critical user flows and API endpoints function as expected, and to provide fast, repeatable feedback for development and deployment.
 
-1. Functional UI Automation (React App)
+2. What is Being Tested
+------------------------
+- **Web UI Flows:**
+  - User login (valid and invalid credentials)
+  - User registration
+  - Profile update (address change)
+  - Navigation and content validation
+- **REST API Endpoints:**
+  - Deposit funds (POST)
+  - Get account by ID (GET)
+  - Update customer information (PUT)
+  - Response schema and status code validation
 
-Use a test framework (e.g., Cypress, Playwright, or Selenium).
-Automate the following scenarios:
-Login with valid/invalid credentials.
-Creating a new item (e.g., a todo/user).
-Editing an existing item.
-Deleting an item.
-Asserting presence of expected data after actions.
-2. API Test Automation (Node.js Backend)
+3. Test Coverage Areas
+----------------------
+- **Positive Scenarios:**
+  - Successful login, registration, and profile update
+  - Valid API requests returning expected data and status codes
+- **Negative Scenarios:**
+  - Login with invalid credentials
+  - API requests with invalid data or missing fields
+- **Validation:**
+  - UI: Page content, navigation, and error messages
+  - API: Status codes, required response keys, and JSON schema validation
+- **Cross-browser:**
+  - Tests are designed to run on Chromium, Firefox, and WebKit (where applicable)
 
-Use a tool like Postman/Newman, Supertest, or REST-assured.
-Automate API tests for:
-POST /login
-GET /items
-POST /items
-PUT /items/:id
+4. Tools Used and Rationale
+---------------------------
+- **Playwright:**
+  - Chosen for its modern, fast, and reliable browser automation capabilities
+  - Supports both UI and API testing in a single framework
+  - Easy integration with CI/CD pipelines
+- **Ajv (Another JSON Schema Validator):**
+  - Used for validating API responses against JSON schemas
+  - Ensures data contracts are enforced
+- **GitHub:**
+  - Source control and collaboration
+  - Enables versioning and traceability of test assets
+
+5. Test Data
+------------
+- Test data (user credentials, account IDs, etc.) is managed in code or external files as needed for repeatability and maintainability.
+
+6. Reporting
+------------
+- Playwright's built-in HTML and list reporters are used for clear, actionable test results
+- Test results are pushed to GitHub for team visibility
+
+7. Maintenance
+--------------
+- Tests are updated as application features evolve
+- Failures are triaged and addressed promptly to maintain trust in automation
+
+---
+This strategy ensures robust coverage of ParaBank's critical workflows and APIs, leveraging modern tools for speed, reliability, and maintainability.
