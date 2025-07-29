@@ -66,3 +66,4 @@ This document outlines the test plan and strategy for automated testing of the P
 
 ---
 This strategy ensures robust coverage of ParaBank's critical workflows and APIs, leveraging modern tools for speed, reliability, and maintainability.
+Web App Url: https://parabank.parasoft.com/parabank/index.htm/
